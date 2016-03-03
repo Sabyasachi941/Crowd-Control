@@ -24,8 +24,10 @@ Technologies Used:
 13. Gulp
 14. JUnit
 15. SASS/Stylus
-16. Box fuse
 17. Hosted with Amazon Web Services (Tomcat application server, NGINX web server)
+* Jenkins
+* Maven
+* Elastic Beanstalk
 18. Dragula
 19. Plotly/charts.js/d3.js/Kibana
 20. Facebook API
