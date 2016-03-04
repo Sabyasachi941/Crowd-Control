@@ -49,7 +49,7 @@
     <!-- Package as an executable war -->
     <build>
 
-        <finalName>spring-boot-web-mvn-war</finalName>
+        <finalName>springbootwebmvnwar</finalName>
 
         <plugins>
             <plugin>
