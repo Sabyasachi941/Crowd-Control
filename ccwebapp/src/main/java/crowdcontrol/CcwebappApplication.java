@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
+
 public class CcwebappApplication {
 
 	public static void main(String[] args) {
