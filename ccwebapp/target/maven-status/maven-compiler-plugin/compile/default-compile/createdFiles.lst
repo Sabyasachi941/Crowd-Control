@@ -1,2 +1,2 @@
-crowdcontrol/CcwebappApplication.class
-crowdcontrol/Cc_controller.class
+cc/CcwebappApplication.class
+cc/GreetingController.class
