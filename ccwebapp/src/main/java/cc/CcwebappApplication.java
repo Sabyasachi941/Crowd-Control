@@ -9,6 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+
 
 @Configuration
 @ComponentScan
@@ -27,11 +32,12 @@ public class CcwebappApplication extends SpringBootServletInitializer {
     private static Class<CcwebappApplication> applicationClass = CcwebappApplication.class;
 }
 
-@RestController
+@Controller
 class GreetingController {
     
-    @RequestMapping("/hello/{name}")
-    String hello(@PathVariable String name) {
-        return "Hello, " + name + "!";
+    @RequestMapping("/greeting")
+    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
     }
 }
