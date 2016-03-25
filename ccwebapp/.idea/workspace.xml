@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/.gitignore" afterPath="$PROJECT_DIR$/src/main/resources/.gitignore" />
-    </list>
+    <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="" />
     <ignored path="ccwebapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -758,12 +755,12 @@
       <workItem from="1457783193827" duration="16576000" />
       <workItem from="1458002287547" duration="22195000" />
       <workItem from="1458518434029" duration="336000" />
-      <workItem from="1458763043191" duration="4064000" />
+      <workItem from="1458763043191" duration="4115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43171000" />
+    <option name="totallyTimeSpent" value="43222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
