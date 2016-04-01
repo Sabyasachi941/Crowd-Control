@@ -15,6 +15,10 @@ public class Venue {
     private String password;
     private Integer capacity;
 
+    public long getId() {
+        return id;
+    }
+
     public Integer getCapacity() {
         return capacity;
     }
