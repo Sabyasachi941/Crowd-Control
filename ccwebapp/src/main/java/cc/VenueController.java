@@ -31,7 +31,7 @@ public class VenueController {
         return "venues";
     }
 
-    @RequestMapping("venues/{id}")
+    @RequestMapping("venue/{id}")
     public String showVenue(@PathVariable Integer id, Model model){
         model.addAttribute("venue", venueService.getVenueById(id));
         return "venueshow";

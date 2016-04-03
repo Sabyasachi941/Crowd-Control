@@ -10,12 +10,12 @@ public class Venue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Integer id;
     private String email;
     private String password;
     private Integer capacity;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

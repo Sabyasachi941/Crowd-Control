@@ -12,6 +12,6 @@ import org.springframework.data.repository.query.Param;
 
 
 @RepositoryRestResource(collectionResourceRel = "timestamps", path = "timestamps")
-public interface TimestampRepository extends PagingAndSortingRepository<Timestamp, Long> {
-    List<Timestamp> findByid(@Param("id") long id);
+public interface TimestampRepository extends PagingAndSortingRepository<Timestamp, Integer> {
+    //methods for querying
 }

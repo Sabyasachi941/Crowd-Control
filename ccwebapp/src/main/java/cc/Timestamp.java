@@ -8,17 +8,20 @@ import javax.persistence.Id;
 public class Timestamp {
 
     @Id
-    private long id;
+    private Integer id;
 
-    private int timestamp;
+    private Integer timestamp;
     //change the data type for timestamp to match up with postgres type/joda time idk
-    public int getTimestamp() {
+    public Integer getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(int Timestamp) {
+    public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
     }
 
+    public Integer getId() { return id; }
+
+    public void setId(Integer id) {this.id = id; }
 
 }

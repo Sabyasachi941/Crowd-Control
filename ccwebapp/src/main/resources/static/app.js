@@ -33,7 +33,7 @@ class TimestampList extends React.Component{
             <table>
             <tr>
                 <th>ID</th>
-            <th>Timestamp</th>
+                <th>Timestamp</th>
             </tr>
             {timestamps}
         </table>
