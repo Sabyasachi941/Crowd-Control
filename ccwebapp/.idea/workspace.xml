@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/venueshow.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" afterPath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/TimestampRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cc/TimestampRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/Venue.java" afterPath="$PROJECT_DIR$/src/main/java/cc/Venue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/VenueController.java" afterPath="$PROJECT_DIR$/src/main/java/cc/VenueController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/built/bundle.js.map" afterPath="$PROJECT_DIR$/src/main/resources/static/built/bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" />
-    </list>
+    <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="" />
     <ignored path="ccwebapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1109,7 +1099,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1342,7 +1332,7 @@
         <state vertical-scroll-proportion="-16.11111">
           <caret line="54" column="47" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
