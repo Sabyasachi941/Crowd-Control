@@ -31,6 +31,14 @@ public class VenueController {
         return "venues";
     }
 
+    /*@RequestMapping(value="/venues", method = RequestMethod.POST)
+    public String list(Model model){
+        return "venues";
+    }*/
+
+
+
+
     @RequestMapping("venue/{id}")
     public String showVenue(@PathVariable Integer id, Model model){
         model.addAttribute("venue", venueService.getVenueById(id));

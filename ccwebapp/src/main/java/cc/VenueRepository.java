@@ -14,7 +14,7 @@ import org.springframework.data.repository.CrudRepository;
 import cc.Venue;
 
 
-public interface VenueRepository extends CrudRepository<Venue, Integer> {
+public interface VenueRepository extends PagingAndSortingRepository<Venue, Integer> {
 }
 
 

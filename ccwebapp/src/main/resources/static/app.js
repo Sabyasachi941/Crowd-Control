@@ -1,6 +1,5 @@
 'use strict';
 
-// tag::vars[]
 const React = require('react');
 const client = require('./client');
 
@@ -34,6 +33,7 @@ class TimestampList extends React.Component{
             <tr>
                 <th>ID</th>
                 <th>Timestamp</th>
+                <th>Venue</th>
             </tr>
             {timestamps}
         </table>
@@ -47,6 +47,7 @@ class Timestamp extends React.Component{
             <tr>
                 <td>{this.props.timestamp.id}</td>
                 <td>{this.props.timestamp.timestamp}</td>
+                <td>{this.props.timestamp.venue_id}</td>
             </tr>
     )
     }
