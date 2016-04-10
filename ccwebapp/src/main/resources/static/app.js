@@ -15,7 +15,6 @@ class App extends React.Component {
             this.setState({timestamps: response.entity._embedded.timestamps});
     });
     }
-
     render() {
         return (
             <TimestampList timestamps={this.state.timestamps}/>
@@ -30,13 +29,12 @@ class TimestampList extends React.Component{
     );
         return (
             <table>
-            <tr>
-                <th>ID</th>
-                <th>Timestamp</th>
-                <th>Venue</th>
-            </tr>
-            {timestamps}
-        </table>
+				<tr>
+					<th>TimestampsLOL</th>
+				</tr>
+				{timestamps}
+			</table>
+        
     )
     }
 }
@@ -45,9 +43,7 @@ class Timestamp extends React.Component{
     render() {
         return (
             <tr>
-                <td>{this.props.timestamp.id}</td>
                 <td>{this.props.timestamp.timestamp}</td>
-                <td>{this.props.timestamp.venue_id}</td>
             </tr>
     )
     }

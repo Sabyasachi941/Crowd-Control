@@ -110,17 +110,7 @@
 	                    React.createElement(
 	                        'th',
 	                        null,
-	                        'ID'
-	                    ),
-	                    React.createElement(
-	                        'th',
-	                        null,
-	                        'Timestamp'
-	                    ),
-	                    React.createElement(
-	                        'th',
-	                        null,
-	                        'Venue'
+	                        'TimestampsLOL'
 	                    )
 	                ),
 	                timestamps
@@ -149,17 +139,7 @@
 	                React.createElement(
 	                    'td',
 	                    null,
-	                    this.props.timestamp.id
-	                ),
-	                React.createElement(
-	                    'td',
-	                    null,
 	                    this.props.timestamp.timestamp
-	                ),
-	                React.createElement(
-	                    'td',
-	                    null,
-	                    this.props.timestamp.venue_id
 	                )
 	            );
 	        }
