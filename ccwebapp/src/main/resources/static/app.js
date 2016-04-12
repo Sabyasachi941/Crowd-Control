@@ -1,6 +1,6 @@
 'use strict';
 
-const React = require('react');
+import React from 'react';
 const client = require('./client');
 
 class App extends React.Component {
@@ -34,7 +34,7 @@ class TimestampList extends React.Component{
 				</tr>
 				{timestamps}
 			</table>
-        
+
     )
     }
 }
@@ -49,7 +49,7 @@ class Timestamp extends React.Component{
     }
 }
 
-React.render(
+ReactDOM.render(
 <App />,
     document.getElementById('react')
 )
