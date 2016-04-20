@@ -1,5 +1,7 @@
 package cc;
 
+import org.joda.time.DateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +16,7 @@ public class Timestamp {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Integer timestamp;
+    private DateTime timestamp;
 
     @ManyToOne
     @JoinColumn(name = "venue_id")
@@ -22,16 +24,16 @@ public class Timestamp {
 
     public Timestamp() {}
 
-    public Timestamp(Integer timestamp) {
+    public Timestamp(DateTime timestamp) {
         this.timestamp = timestamp;
     }
 
     //change the data type for timestamp to match up with postgres type/joda time idk
-    public Integer getTimestamp() {
+    public DateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(DateTime timestamp) {
         this.timestamp = timestamp;
     }
 

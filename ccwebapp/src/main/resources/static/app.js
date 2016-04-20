@@ -1,55 +1,34 @@
-'use strict';
-
-import React from 'react';
-const client = require('./client');
-
-class App extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {timestamps: []};
-    }
-
-    componentDidMount() {
-        client({method: 'GET', path: 'timestamps'}).done(response => {
-            this.setState({timestamps: response.entity._embedded.timestamps});
+var app = angular.module('app', ['restangular'])
+    .config(function(RestangularProvider) {
+        RestangularProvider.setBaseUrl('http://localhost:8181/');
     });
-    }
-    render() {
-        return (
-            <TimestampList timestamps={this.state.timestamps}/>
-    )
-    }
-}
+ 
+    
 
-class TimestampList extends React.Component{
-    render() {
-        var timestamps = this.props.timestamps.map(timestamp =>
-            <Timestamp key={timestamp._links.self.href} timestamp={timestamp}/>
-    );
-        return (
-            <table>
-				<tr>
-					<th>TimestampsLOL</th>
-				</tr>
-				{timestamps}
-			</table>
+    app.config(function(RestangularProvider) {
 
-    )
-    }
-}
+        // add a response intereceptor
+        RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+          var extractedData;
+          // .. to look for getList operations
+          if (operation === "getList") {
+            // .. and handle the data and meta data
+            resp =  data._embedded[what];
+            resp._links = data._links;
+            return resp
+            
+          } 
+          
+          return data;
+        });
+        
+        RestangularProvider.setRestangularFields({
+            selfLink: 'self.link'
+        });
+        
 
-class Timestamp extends React.Component{
-    render() {
-        return (
-            <tr>
-                <td>{this.props.timestamp.timestamp}</td>
-            </tr>
-    )
-    }
-}
+});
 
-ReactDOM.render(
-<App />,
-    document.getElementById('react')
-)
+app.controller('IndexCtrl', function($scope, Restangular) {
+        $scope.timestamps = Restangular.all('timestamps').getList();
+    });
