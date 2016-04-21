@@ -27,6 +27,7 @@ public class VenueServiceImpl implements VenueService {
         return venueRepository.findOne(id);
     }
 
+
     @Override
     public Venue saveVenue(Venue venue) {
         return venueRepository.save(venue);

@@ -7,9 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.Collection;
+import java.io.Serializable;
+import javax.persistence.*;
 
 @Entity
-public class Venue {
+public class Venue implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +23,18 @@ public class Venue {
     @OneToMany(mappedBy = "venue")
     private List<Timestamp> timestamps;
     //list is not ordered
+
+    public Venue(){
+
+    }
+
+    public Venue(Venue venue){
+        this.id = venue.id;
+        this.email = venue.email;
+        this.password = venue.password;
+        this.capacity = venue.capacity;
+        this.timestamps = venue.timestamps;
+    }
 
     public Integer getId() { return id;}
 
