@@ -17,7 +17,7 @@ var app = angular.module('app', ['restangular'])
             resp._links = data._links;
             return resp
             
-          } 
+          }
           
           return data;
         });
@@ -25,10 +25,12 @@ var app = angular.module('app', ['restangular'])
         RestangularProvider.setRestangularFields({
             selfLink: 'self.link'
         });
-        
+
 
 });
 
 app.controller('IndexCtrl', function($scope, Restangular) {
         $scope.timestamps = Restangular.all('timestamps').getList();
+
     });
+
