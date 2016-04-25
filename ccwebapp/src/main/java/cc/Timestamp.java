@@ -21,15 +21,17 @@ public class Timestamp {
     @JoinColumn(name = "venue_id")
     private Venue venue;
 
+    private Integer peopleIn;
+
+    private Integer peopleOut;
+
     public Timestamp() {}
 
     public Timestamp(DateTime timestamp) {
         this.timestamp = timestamp;
     }
 
-    private Integer peopleIn;
 
-    private Integer peopleOut;
     //change the data type for timestamp to match up with postgres type/joda time idk
     public DateTime getTimestamp() {
         return timestamp;
