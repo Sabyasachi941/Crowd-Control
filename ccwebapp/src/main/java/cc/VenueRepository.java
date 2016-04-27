@@ -18,6 +18,8 @@ public interface VenueRepository extends PagingAndSortingRepository<Venue, Integ
     public Venue findByEmail(String email);
 
 
+
+
 }
 
 

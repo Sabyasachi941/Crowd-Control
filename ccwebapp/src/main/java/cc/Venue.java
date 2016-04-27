@@ -24,6 +24,9 @@ public class Venue implements Serializable {
     private List<Timestamp> timestamps;
     //list is not ordered
 
+    @OneToMany(mappedBy = "venue")
+    private List<DayTotalPeople> dayTotalPeople;
+
     public Venue(){
 
     }
@@ -74,6 +77,14 @@ public class Venue implements Serializable {
 
     public Collection<Timestamp> getTimestamps() {
         return timestamps;
+    }
+
+    public void setDayTotalPeople(List<DayTotalPeople> dayTotalPeople) {
+        this.dayTotalPeople = dayTotalPeople;
+    }
+
+    public Collection<DayTotalPeople> getDayTotalPeople() {
+        return dayTotalPeople;
     }
 
 }

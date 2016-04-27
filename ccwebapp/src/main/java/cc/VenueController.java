@@ -7,6 +7,9 @@ package cc;
 import cc.Venue;
 import cc.VenueService;
 import java.util.Map;
+
+import org.joda.time.LocalDate;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import java.util.List;
 
 @Controller
 public class VenueController {
@@ -23,6 +27,24 @@ public class VenueController {
     @Autowired
     public void setVenueService(VenueService venueService) {
         this.venueService = venueService;
+    }
+
+    @Autowired
+    private DayTotalPeopleRepository dayTotalPeopleRepository;
+
+
+    @Scheduled(cron = "* * * * * *")
+    //@Scheduled(cron = "0 0 0 * * *")
+    public void printSomething(){
+        Iterable<Venue> venues = venueService.listAllVenues();
+
+        System.out.println("lol");
+        for(Venue v: venues) {
+            LocalDate d = new LocalDate();
+            dayTotalPeopleRepository.save(new DayTotalPeople(d,0,v));
+            System.out.println("squad");
+        }
+
     }
 
     @RequestMapping(value="/venues", method = RequestMethod.GET)
