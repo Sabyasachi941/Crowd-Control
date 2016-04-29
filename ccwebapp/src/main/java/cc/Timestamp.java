@@ -7,8 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
+//FindbyinDay needs better name seeing as i'm actually calculating total people for the day
+@NamedQuery(name="Timestamp.findByInDay", query= "select SUM(t.peopleIn) from Timestamp t where t.venue =?1 AND t.timestamp BETWEEN ?2 AND ?3")
 public class Timestamp {
 
     @Id

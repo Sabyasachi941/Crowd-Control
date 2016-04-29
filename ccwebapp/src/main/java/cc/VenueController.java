@@ -33,16 +33,14 @@ public class VenueController {
     private DayTotalPeopleRepository dayTotalPeopleRepository;
 
 
-    @Scheduled(cron = "* * * * * *")
-    //@Scheduled(cron = "0 0 0 * * *")
+    //@Scheduled(cron = "* * * * * *")
+    @Scheduled(cron = "0 0 0 * * *")
     public void printSomething(){
         Iterable<Venue> venues = venueService.listAllVenues();
 
-        System.out.println("lol");
         for(Venue v: venues) {
             LocalDate d = new LocalDate();
             dayTotalPeopleRepository.save(new DayTotalPeople(d,0,v));
-            System.out.println("squad");
         }
 
     }
