@@ -33,8 +33,11 @@ public class Timestamp {
 
     public Timestamp() {}
 
-    public Timestamp(DateTime timestamp) {
+    public Timestamp(DateTime timestamp, Integer peopleIn, Integer peopleOut, Venue venue) {
         this.timestamp = timestamp;
+        this.peopleIn = peopleIn;
+        this.peopleOut = peopleOut;
+        this.venue = venue;
     }
 
 

@@ -2,8 +2,8 @@ var app = angular.module('app', ['restangular'])
     .config(function(RestangularProvider) {
         RestangularProvider.setBaseUrl('http://localhost:8181/');
     });
- 
-    
+
+
 
     app.config(function(RestangularProvider) {
 
@@ -16,12 +16,12 @@ var app = angular.module('app', ['restangular'])
             resp =  data._embedded[what];
             resp._links = data._links;
             return resp
-            
+
           }
-          
+
           return data;
         });
-        
+
         RestangularProvider.setRestangularFields({
             selfLink: 'self.link'
         });
@@ -30,7 +30,6 @@ var app = angular.module('app', ['restangular'])
 });
 
 app.controller('IndexCtrl', function($scope, Restangular) {
-        $scope.timestamps = Restangular.all('timestamps').getList();
+        $scope.dayTotalPeoples = Restangular.all('dayTotalPeoples').getList();
 
     });
-

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Collection;
 import java.io.Serializable;
 import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Venue implements Serializable {
@@ -25,6 +26,7 @@ public class Venue implements Serializable {
     //list is not ordered
 
     @OneToMany(mappedBy = "venue")
+    @JsonManagedReference
     private List<DayTotalPeople> dayTotalPeople;
 
     public Venue(){
@@ -83,6 +85,7 @@ public class Venue implements Serializable {
         this.dayTotalPeople = dayTotalPeople;
     }
 
+    @JsonManagedReference
     public Collection<DayTotalPeople> getDayTotalPeople() {
         return dayTotalPeople;
     }

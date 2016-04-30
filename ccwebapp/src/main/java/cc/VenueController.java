@@ -34,6 +34,7 @@ public class VenueController {
 
 
     //@Scheduled(cron = "* * * * * *")
+    //current time creates new date for the first venue before midnight so it has the wrong date but venues after are correct??
     @Scheduled(cron = "0 0 0 * * *")
     public void printSomething(){
         Iterable<Venue> venues = venueService.listAllVenues();

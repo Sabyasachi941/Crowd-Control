@@ -15,8 +15,8 @@ import cc.Venue;
 
 
 public interface VenueRepository extends PagingAndSortingRepository<Venue, Integer> {
-    public Venue findByEmail(String email);
-
+    Venue findByEmail(String email);
+    List <Venue> findListByEmail(String email);
 
 }
 
