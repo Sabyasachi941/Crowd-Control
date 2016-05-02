@@ -1,12 +1,12 @@
 $(function () {
-    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+    $.getJSON('http://localhost:8181/graphData', function (data) {
 
         $('#container').highcharts({
             chart: {
                 zoomType: 'x'
             },
             title: {
-                text: 'USD to EUR exchange rate over time'
+                text: 'Visitors per day'
             },
             subtitle: {
                 text: document.ontouchstart === undefined ?
@@ -17,7 +17,7 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: 'Exchange rate'
+                    text: 'Num people'
                 }
             },
             legend: {
