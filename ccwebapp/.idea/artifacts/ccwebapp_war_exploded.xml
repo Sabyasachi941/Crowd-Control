@@ -102,6 +102,8 @@
           <element id="library" level="project" name="Maven: org.jadira.usertype:usertype.spi:3.1.0.CR1" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.3.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.3.3.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-security:1.3.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
