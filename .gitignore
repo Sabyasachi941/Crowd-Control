@@ -4,5 +4,4 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
-ccwebapp/
-node_modules
+
