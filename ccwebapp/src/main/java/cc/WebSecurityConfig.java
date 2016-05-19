@@ -42,7 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/", "/venues/new").permitAll()
+                //static refers to the static content - without this user would not be able to see images/styles/js effect w/out signing in!
+                    .antMatchers("/", "/venues/new", "/static/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
