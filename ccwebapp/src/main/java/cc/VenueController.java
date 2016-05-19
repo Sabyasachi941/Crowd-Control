@@ -4,20 +4,14 @@ package cc;
  * Created by harryquigley on 30/03/2016.
  */
 
-import cc.Venue;
-import cc.VenueService;
-import java.util.Map;
-
 import org.joda.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.ui.Model;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import java.util.List;
 
 @Controller
 public class VenueController {
@@ -32,7 +26,8 @@ public class VenueController {
     @Autowired
     private DayTotalPeopleRepository dayTotalPeopleRepository;
 
-
+    //change name from printsomething
+    //creates new date in dayTotalpeople repository at midnight for each venue
     //@Scheduled(cron = "* * * * * *")
     //current time creates new date for the first venue before midnight so it has the wrong date but venues after are correct??
     @Scheduled(cron = "0 0 0 * * *")
@@ -49,15 +44,13 @@ public class VenueController {
     @RequestMapping(value="/venues", method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("venues", venueService.listAllVenues());
-        return "venues";
+        return "venuelist";
     }
 
     /*@RequestMapping(value="/venues", method = RequestMethod.POST)
     public String list(Model model){
         return "venues";
     }*/
-
-
 
 
     @RequestMapping("venue/{id}")
@@ -78,10 +71,10 @@ public class VenueController {
         return "venueform";
     }
 
-    @RequestMapping(value = "venue", method = RequestMethod.POST)
+    @RequestMapping(value = "/venue", method = RequestMethod.POST)
     public String saveVenue(Venue venue){
-        venueService.saveVenue(venue);
-        return "redirect:/venue/" + venue.getId();
+        Venue savedVenue = venueService.saveVenue(venue);
+        return "redirect:/venue/" + savedVenue.getId();
     }
 
     @RequestMapping("venue/delete/{id}")

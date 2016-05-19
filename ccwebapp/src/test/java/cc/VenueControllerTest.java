@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
@@ -28,7 +29,11 @@ public class VenueControllerTest {
     @InjectMocks //sets up mock controller & inserts mock objects into it
     private VenueController venueController;
 
+    private DayTotalPeopleService dayTotalPeopleService;
+
     private MockMvc mockMvc;
+
+    private static Logger LOGGER = Logger.getLogger("InfoLogging");
 
     @Before
     public void setup(){
@@ -36,6 +41,7 @@ public class VenueControllerTest {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(venueController).build();
     }
+
 
     @Test
     public void testList() throws Exception{
