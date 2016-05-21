@@ -24,6 +24,7 @@ public class DayTotalPeopleController {
     @RequestMapping(value ="/graphData", method = RequestMethod.GET, headers = "Accept=application/json")
     public String getGraphData(Principal principal) {
         //This should all be in a service class but i haven't got it working in one yet!
+        //Actually no i think it's right here!
         List<DayTotalPeople> list;
         String returnString="[";
         String email = principal.getName();

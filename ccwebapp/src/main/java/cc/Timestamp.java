@@ -14,7 +14,12 @@ import javax.persistence.*;
 
 @Entity
 //FindbyinDay needs better name seeing as i'm actually calculating total people for the day
-@NamedQuery(name="Timestamp.findByInDay", query= "select SUM(t.peopleIn) from Timestamp t where t.venue =?1 AND t.timestamp BETWEEN ?2 AND ?3")
+@NamedQueries({
+        @NamedQuery(name="Timestamp.findByInDay", query= "select SUM(t.peopleIn) from Timestamp t where t.venue =?1 AND t.timestamp BETWEEN ?2 AND ?3"),
+        @NamedQuery(name ="Timestamp.findByLatestTimestamp", query ="select t.currentAttendance from Timestamp t where t.venue = ?1 and t.timestamp = (select max(t.timestamp) from Timestamp t)")
+})
+
+
 public class Timestamp {
 
     @Id
@@ -31,13 +36,16 @@ public class Timestamp {
 
     private Integer peopleOut;
 
+    private Integer currentAttendance;
+
     public Timestamp() {}
 
-    public Timestamp(DateTime timestamp, Integer peopleIn, Integer peopleOut, Venue venue) {
+    public Timestamp(DateTime timestamp, Integer peopleIn, Integer peopleOut, Venue venue, Integer currentAttendance) {
         this.timestamp = timestamp;
         this.peopleIn = peopleIn;
         this.peopleOut = peopleOut;
         this.venue = venue;
+        this.currentAttendance = currentAttendance;
     }
 
 
@@ -61,5 +69,9 @@ public class Timestamp {
     public Integer getPeopleOut() {return peopleOut;}
 
     public void setPeopleOut(Integer peopleOut) {this.peopleOut = peopleOut;}
+
+    public Integer getCurrentAttendance() {return currentAttendance;}
+
+    public void setCurrentAttendance(Integer peopleIn) {this.peopleIn = currentAttendance;}
 
 }
