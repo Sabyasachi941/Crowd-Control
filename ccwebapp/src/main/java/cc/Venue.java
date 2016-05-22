@@ -1,15 +1,11 @@
 package cc;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
-import java.util.Collection;
-import java.io.Serializable;
-import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Venue implements Serializable {
@@ -62,16 +58,6 @@ public class Venue implements Serializable {
     }
 
     public void setPassword(String password) {this.password = password; }
-
-    /*public void addTimestamp(Timestamp timestamp) {
-        if (!getTimestamps().contains(timestamp)) {
-            getTimestamps().add(timestamp);
-            if (timestamp.getVenue() != null) {
-                timestamp.getVenue().getTimestamps().remove(timestamp);
-            }
-            timestamp.setVenue(this);
-        }
-    }*/
 
     public void setTimestamps(List<Timestamp> timestamps) {
         this.timestamps = timestamps;
