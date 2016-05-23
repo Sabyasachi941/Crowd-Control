@@ -2,13 +2,11 @@ package cc;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.joda.time.DateTime;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.joda.time.format.DateTimeFormat;
-import java.text.SimpleDateFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by harryquigley on 27/04/2016.
@@ -66,11 +64,11 @@ public class TimestampService {
         for(Venue v: venues) {
             Integer total = timestampRepository.findByInDay(v,st,et);
             dayTotalPeopleRepository.updateTotal(total,d,v);
-            //dayTotalPeopleRepository.findByDateAndVenue(d,v).setTotalPeople(total);
-            //dtp.setTotalPeople(total);
 
             System.out.println(total);
         }
+
+
 
 
     }
