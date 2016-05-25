@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/CustomUserDetails.java" afterPath="$PROJECT_DIR$/src/main/java/cc/CustomUserDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/CustomUserDetailsService.java" afterPath="$PROJECT_DIR$/src/main/java/cc/CustomUserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/TimeStampController.java" afterPath="$PROJECT_DIR$/src/main/java/cc/TimeStampController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" afterPath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/loginview.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/loginview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" />
     </list>
     <ignored path="ccwebapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +51,8 @@
       <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41379312">
-              <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.62068963">
+              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,12 +202,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/venueform.html" />
         <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/portalview.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/cc/CustomUserDetails.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/loginview.html" />
         <option value="$PROJECT_DIR$/src/main/java/cc/CustomUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cc/TimeStampController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -1178,7 +1172,7 @@
       <workItem from="1463068531835" duration="8106000" />
       <workItem from="1463579632229" duration="37168000" />
       <workItem from="1463776052635" duration="39453000" />
-      <workItem from="1464042849883" duration="8167000" />
+      <workItem from="1464042849883" duration="8553000" />
     </task>
     <servers />
   </component>
@@ -1215,7 +1209,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367400000" />
+    <option name="totallyTimeSpent" value="367786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1718,8 +1712,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cc/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41379312">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.62068963">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
