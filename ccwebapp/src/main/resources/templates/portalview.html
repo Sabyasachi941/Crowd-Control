@@ -27,7 +27,7 @@
 
     <p>Number of people currently in venue:</p>
 
-    <h1>{{myWelcome}}</h1>
+    <h1 id = "demo"></h1>
 
 </div>
 
@@ -35,22 +35,28 @@
 
 <div id="visualization" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<!--<script src = "basic.js" type = "text/babel" ></script>-->
-
-<!--<script src="/static/app.js"></script>-->
-<!--<script src="bundle.js"></script>-->
-
 <script src="/static/chart.js"></script>
 
 <script>
-    var app = angular.module('myApp', []);
-    app.controller('myCtrl', function($scope, $http) {
-        $http.get("http://localhost:8181/CurrentAttendance")
-                .then(function(response) {
-                    $scope.myWelcome = response.data;
-                });
-    });
+    var myVar = setInterval(loadCurrentAttendance, 1000);
+
+    function loadCurrentAttendance() {
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            // code for modern browsers
+            xhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "http://localhost:8181/CurrentAttendance", true);
+        xhttp.send();
+    }
 </script>
-<!--<script src="linechart.js" type = "text/babel"></script>-->
 </body>
 </html>

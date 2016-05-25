@@ -16,7 +16,7 @@ import javax.persistence.*;
 //FindbyinDay needs better name seeing as i'm actually calculating total people for the day
 @NamedQueries({
         @NamedQuery(name="Timestamp.findByInDay", query= "select SUM(t.peopleIn) from Timestamp t where t.venue =?1 AND t.timestamp BETWEEN ?2 AND ?3"),
-        @NamedQuery(name ="Timestamp.findByLatestTimestamp", query ="select t.currentAttendance from Timestamp t where t.venue = ?1 and t.timestamp = (select max(t.timestamp) from Timestamp t)")
+        @NamedQuery(name ="Timestamp.findByLatestTimestamp", query ="select t.currentAttendance from Timestamp t where t.venue = ?1 and t.timestamp = (select max(t.timestamp) from Timestamp t where t.venue = ?1)")
 })
 
 

@@ -45,7 +45,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.and().httpBasic() is needed to curl to db but it creates annoying erro
                 //static refers to the static content - without this user would not be able to see images/styles/js effect w/out signing in!
                     .antMatchers("/", "/venue/new", "/static/**").permitAll()
-                    .anyRequest().authenticated();
+                    .anyRequest().authenticated()
+                    .and()
+                    .httpBasic();
                 http.formLogin()
                     .loginPage("/login")
                     .permitAll()

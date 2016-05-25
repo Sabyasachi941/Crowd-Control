@@ -11,7 +11,7 @@ import java.security.Principal;
  * Created by harryquigley on 21/05/2016.
  */
 @RestController
-public class TimeStampController {
+public class    TimeStampController {
 
     @Autowired
     private VenueRepository vr;
