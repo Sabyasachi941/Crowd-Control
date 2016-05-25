@@ -22,18 +22,20 @@
 </form>
 <div id="react"></div>
 <div id="line"></div>
-<div id="container"></div>
-<div ng-app="myApp" ng-controller="myCtrl">
+<div id="container" ></div>
 
+<div id = "currentNum">
     <p>Number of people currently in venue:</p>
-
     <h1 id = "demo"></h1>
-
 </div>
 
 
 
-<div id="visualization" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+
+<div id="visualization"></div>
 
 <script src="/static/chart.js"></script>
 
@@ -54,7 +56,7 @@
                 document.getElementById("demo").innerHTML = xhttp.responseText;
             }
         };
-        xhttp.open("GET", "http://localhost:8181/CurrentAttendance", true);
+        xhttp.open("GET", "http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/CurrentAttendance", true);
         xhttp.send();
     }
 </script>
