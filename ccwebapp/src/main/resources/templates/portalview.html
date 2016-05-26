@@ -134,10 +134,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div class="panel panel-red panel-widget">
+        <div class="col-xs-12 col-md-6 col-lg-6" >
+            <div  id ="eitherIncreaseOrDecrease">
                 <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left" id ="eitherIncreaseOrDecrease">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <svg  id = "dependsOnPercentage"></svg>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
                         <div class="large" id="increaseOrDecrease"></div>
@@ -154,9 +155,6 @@
                 <div class="panel-heading">Footfall Data</div>
                 <div class="panel-body">
                     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-
-
                 </div>
             </div>
         </div>
@@ -216,7 +214,7 @@
             xmlhttp.send();
         }
 
-        function loadMonthlyIncreaseOrDecrease() {
+        function loadMonthlyIncreaseOrDecrease(callback) {
             var xmlhttp;
 
             if (window.XMLHttpRequest) {
@@ -240,30 +238,35 @@
                     }
                 }
             }
-            xmlhttp.open("GET", "http://localhost:8181/soFarThisMonth", true);
+            xmlhttp.open("GET", "http://localhost:8181/MonthlyIncreaseOrDecrease", false);
             xmlhttp.send();
+            callback();
         }
 
         function changeImage() {
-            var icon = document.getElementById("eitherIncreaseOrDecrease");
             var percentage = document.getElementById("increaseOrDecrease");
-            if (percentage > 0) {
-                icon.innerHTML = <svg class="glyph stroked arrow up"><use xlink:href="#stroked-arrow-up"/></svg>;
-            }
-            else if(percentage < 0){
-                icon.innerHTML = <svg class="glyph stroked arrow down"><use xlink:href="#stroked-arrow-down"/></svg>;
+            var percentageString = percentage.innerHTML;
+            var p = parseFloat(percentageString);
+            if (p > 0) {
+                document.getElementById("eitherIncreaseOrDecrease").className ="panel panel-teal panel-widget";
+                document.getElementById("dependsOnPercentage").className="glyph stroked arrow up";
+                document.getElementById("dependsOnPercentage").innerHTML="<use xlink:href='#stroked-arrow-up'/>";
 
             }
-
-
-
+            else if(p < 0){
+                document.getElementById("eitherIncreaseOrDecrease").className ="panel panel-red panel-widget";
+                document.getElementById("dependsOnPercentage").className="glyph stroked arrow down";
+                document.getElementById("dependsOnPercentage").innerHTML="<use xlink:href='#stroked-arrow-up'/>";
+            }
         }
 
         $(document).ready(function () {
             loadMonthSoFar();
             loadCurrentAttendance();
-            loadMonthlyIncreaseOrDecrease();
-            changeImage();
+            loadMonthlyIncreaseOrDecrease(function(){
+                changeImage();
+            } );
+
 
         });
 

@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" afterPath="$PROJECT_DIR$/src/main/java/cc/Timestamp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" />
     </list>
     <ignored path="ccwebapp.iws" />
@@ -30,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="portalview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="portalview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/portalview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.470589">
-              <caret line="265" column="26" selection-start-line="265" selection-start-column="26" selection-end-line="265" selection-end-column="26" />
+            <state vertical-scroll-proportion="-1.7880185">
+              <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -112,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DayTotalPeopleController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DayTotalPeopleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8">
-              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+            <state vertical-scroll-proportion="-7.2222223">
+              <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1183,7 +1179,7 @@
       <workItem from="1463068531835" duration="8106000" />
       <workItem from="1463579632229" duration="37168000" />
       <workItem from="1463776052635" duration="39453000" />
-      <workItem from="1464042849883" duration="28392000" />
+      <workItem from="1464042849883" duration="31939000" />
     </task>
     <servers />
   </component>
@@ -1220,7 +1216,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387625000" />
+    <option name="totallyTimeSpent" value="391172000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1726,22 +1722,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/portalview.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.470589">
-          <caret line="265" column="26" selection-start-line="265" selection-start-column="26" selection-end-line="265" selection-end-column="26" />
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/portalview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8">
-          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+        <state vertical-scroll-proportion="-1.7880185">
+          <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
