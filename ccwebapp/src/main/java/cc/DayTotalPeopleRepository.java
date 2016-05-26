@@ -19,6 +19,8 @@ public interface DayTotalPeopleRepository extends PagingAndSortingRepository <Da
     void updateTotal(Integer total, LocalDate d, Venue v);
 
     List <DayTotalPeople> findByVenue(Venue v);
+
+    Double findTotalPeopleByVenueAndDateBetween(Venue v, LocalDate d1, LocalDate d2);
 }
 
 

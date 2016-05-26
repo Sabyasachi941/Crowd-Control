@@ -21,7 +21,11 @@ import java.time.ZoneId;
  * Created by harryquigley on 25/04/2016.
  */
 @Entity
-@NamedQuery(name="DayTotalPeople.updateTotal", query= "update DayTotalPeople d set d.totalPeople =?1 where d.date =?2 AND d.venue =?3")
+@NamedQueries({
+        @NamedQuery(name = "DayTotalPeople.updateTotal", query = "update DayTotalPeople d set d.totalPeople =?1 where d.date =?2 AND d.venue =?3"),
+        @NamedQuery(name = "DayTotalPeople.findTotalPeopleByVenueAndDateBetween", query = "select sum(d.totalpeople) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3")
+})
+
 public class DayTotalPeople {
 
     @Id

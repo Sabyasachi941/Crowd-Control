@@ -1,12 +1,12 @@
 $(function () {
-    $.getJSON('http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/graphData', function (data) {
+    $.getJSON('http://localhost:8181/graphData', function (data) {
 
         $('#container').highcharts({
             chart: {
                 zoomType: 'x'
             },
             title: {
-                text: 'Visitors per day'
+                text: 'Daily Footfall for this year so far'
             },
             subtitle: {
                 text: document.ontouchstart === undefined ?
@@ -52,7 +52,7 @@ $(function () {
 
             series: [{
                 type: 'area',
-                name: 'USD to EUR',
+                name: 'total people',
                 data: data
             }]
         });
