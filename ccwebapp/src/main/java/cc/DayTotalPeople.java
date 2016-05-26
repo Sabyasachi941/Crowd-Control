@@ -23,9 +23,8 @@ import java.time.ZoneId;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "DayTotalPeople.updateTotal", query = "update DayTotalPeople d set d.totalPeople =?1 where d.date =?2 AND d.venue =?3"),
-        @NamedQuery(name = "DayTotalPeople.findTotalPeopleByVenueAndDateBetween", query = "select sum(d.totalpeople) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3")
+        @NamedQuery(name = "DayTotalPeople.findSumPeopleByVenueAndDateBetween", query = "select sum(d.totalPeople) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3")
 })
-
 public class DayTotalPeople {
 
     @Id
@@ -65,14 +64,8 @@ public class DayTotalPeople {
     @Override
     public String toString(){
 
-        //DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy,MM,dd");
-
         long epoch = date.toDateTimeAtStartOfDay(DateTimeZone.UTC).getMillis();
-
-        //long epoch = date.atStartOfDay();
-        //String formattedDate = date.toString( fmt );
         String s = "["+epoch+","+totalPeople+"]";
-
         return s;
     }
 

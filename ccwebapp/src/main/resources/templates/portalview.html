@@ -106,7 +106,7 @@
     <div class="row">
 
 
-        <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-md-6 col-lg-12">
             <div class="panel panel-blue panel-widget">
                 <div class="row no-padding">
                     <div class="col-sm-3 col-lg-5 widget-left">
@@ -119,14 +119,28 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class = "row">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+            <div class="panel panel-orange panel-widget">
+                <div class="row no-padding">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"/></svg>
+                    </div>
+                    <div class="col-sm-9 col-lg-7 widget-right">
+                        <div class="large" id = "month"></div>
+                        <div class="text-muted">People so far this month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-xs-12 col-md-6 col-lg-6">
             <div class="panel panel-red panel-widget">
                 <div class="row no-padding">
-                    <div class="col-sm-3 col-lg-5 widget-left">
-                        <svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
+                    <div class="col-sm-3 col-lg-5 widget-left" id ="eitherIncreaseOrDecrease">
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">25.2k</div>
+                        <div class="large" id="increaseOrDecrease"></div>
                         <div class="text-muted">Page Views</div>
                     </div>
                 </div>
@@ -173,6 +187,86 @@
             xhttp.open("GET", "http://localhost:8181/CurrentAttendance", true);
             xhttp.send();
         }
+
+        function loadMonthSoFar() {
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+                    if(xmlhttp.status == 200){
+                        document.getElementById("month").innerHTML = xmlhttp.responseText;
+                    }
+                    else if(xmlhttp.status == 400) {
+                        alert('There was an error 400')
+                    }
+                    else {
+                        alert('something else other than 200 was returned')
+                    }
+                }
+            }
+            xmlhttp.open("GET", "http://localhost:8181/soFarThisMonth", true);
+            xmlhttp.send();
+        }
+
+        function loadMonthlyIncreaseOrDecrease() {
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+                    if(xmlhttp.status == 200){
+                        document.getElementById("increaseOrDecrease").innerHTML = xmlhttp.responseText;
+                    }
+                    else if(xmlhttp.status == 400) {
+                        alert('There was an error 400')
+                    }
+                    else {
+                        alert('something else other than 200 was returned')
+                    }
+                }
+            }
+            xmlhttp.open("GET", "http://localhost:8181/soFarThisMonth", true);
+            xmlhttp.send();
+        }
+
+        function changeImage() {
+            var icon = document.getElementById("eitherIncreaseOrDecrease");
+            var percentage = document.getElementById("increaseOrDecrease");
+            if (percentage > 0) {
+                icon.innerHTML = <svg class="glyph stroked arrow up"><use xlink:href="#stroked-arrow-up"/></svg>;
+            }
+            else if(percentage < 0){
+                icon.innerHTML = <svg class="glyph stroked arrow down"><use xlink:href="#stroked-arrow-down"/></svg>;
+
+            }
+
+
+
+        }
+
+        $(document).ready(function () {
+            loadMonthSoFar();
+            loadCurrentAttendance();
+            loadMonthlyIncreaseOrDecrease();
+            changeImage();
+
+        });
+
     </script>
 </body>
 </html>

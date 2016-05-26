@@ -1,3 +1,4 @@
+
 package cc;
 
 import org.joda.time.LocalDate;
@@ -20,7 +21,5 @@ public interface DayTotalPeopleRepository extends PagingAndSortingRepository <Da
 
     List <DayTotalPeople> findByVenue(Venue v);
 
-    Double findTotalPeopleByVenueAndDateBetween(Venue v, LocalDate d1, LocalDate d2);
+    Integer findSumPeopleByVenueAndDateBetween(Venue v, LocalDate d1, LocalDate d2);
 }
-
-
