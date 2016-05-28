@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+            <a class="navbar-brand" href="#"><span>Crowd</span>Control</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
@@ -214,9 +214,7 @@
             month[10] = "October";
             month[11] = "November";
             month[12] = "December";
-            console.log(results.length);
-            console.log(results[4]);
-            console.log(results[4][0]);
+
             for (i=0; i < results.length; i++) {
                 labels[i] = month[results[i][0]];
                 data[i] = results[i][1];
@@ -254,16 +252,14 @@
         var jsonData = $.ajax({
             url: 'http://localhost:8181/yearlyTotals',
             dataType: 'json',
-        }).done(function (results) {
+        }).done(function (results2) {
 
             // Split Months and data into separate arrays
             var labels = [], data=[];
-            console.log(results.length);
-            console.log(results[4]);
-            console.log(results[4][0]);
-            for (i=0; i < results.length; i++) {
-                labels[i] = results[i][0];
-                data[i] = results[i][1];
+
+            for (i=0; i < results2.length; i++) {
+                labels[i] = results2[i][0];
+                data[i] = results2[i][1];
             }
 
 
@@ -295,8 +291,6 @@
     $(document).ready(function () {
         drawLineChart();
         drawYearlyLineChart();
-
-
     });
 
 </script>

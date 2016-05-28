@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="54c546d3-9556-477e-bfac-08fe71a4608a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cc/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/cc/MvcConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/chart-data.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/chart-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/portalview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/chartview.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/chartview.html" />
     </list>
     <ignored path="ccwebapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chartview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chartview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chartview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.48387095">
+              <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -87,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,17 +96,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <caret line="22" column="89" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DayTotalPeople.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DayTotalPeople.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36467236">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="188" selection-start-line="27" selection-start-column="188" selection-end-line="27" selection-end-column="188" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,10 +203,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/chart-data.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/monthChart.js" />
         <option value="$PROJECT_DIR$/src/main/java/cc/MyObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/chartview.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/chartview.html" />
       </list>
     </option>
   </component>
@@ -1144,7 +1141,7 @@
       <workItem from="1463068531835" duration="8106000" />
       <workItem from="1463579632229" duration="37168000" />
       <workItem from="1463776052635" duration="39453000" />
-      <workItem from="1464042849883" duration="53106000" />
+      <workItem from="1464042849883" duration="55413000" />
     </task>
     <servers />
   </component>
@@ -1181,7 +1178,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412339000" />
+    <option name="totallyTimeSpent" value="414646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1670,18 +1667,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chartview.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="188" selection-start-line="27" selection-start-column="188" selection-end-line="27" selection-end-column="188" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <caret line="22" column="89" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -1689,20 +1688,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeopleController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cc/DayTotalPeople.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chartview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36467236">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.48387095">
+          <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -30,7 +30,10 @@ public class DayTotalPeopleController {
         String returnString="[";
         String email = principal.getName();
         Venue v = vr.findByEmail(email);
-        list = dtpr.findByVenue(v);
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        org.joda.time.LocalDate today = org.joda.time.LocalDate.now();
+        org.joda.time.LocalDate startYear = new LocalDate(year,1,1);
+        list = dtpr.findByVenueAndDateBetween(v,startYear,today);
         List<String> dayTotalPeopleListStrings = new ArrayList<>();
         for (DayTotalPeople d: list) {
             System.out.println(d.toString());
@@ -107,19 +110,17 @@ public class DayTotalPeopleController {
 
     @RequestMapping(value = "/yearlyTotals", method = RequestMethod.GET, headers =  "Accept=application/json" )
     public String getYearlyTotals(Principal principal) {
-        List<Object[]> list;
+        List<Object[]> list2;
         String email = principal.getName();
-        String returnString="[";
         Venue v = vr.findByEmail(email);
-        list = dtpr.findYearlyTotal(v);
-        for (Object[] l: list) {
-            Long sumPeople = (Long) l[0];
-            Integer date = (Integer) l[1];
-            String s = sumPeople.toString();
-            String s2 = date.toString();
-            returnString= returnString+"["+s2+", ";
-            returnString+=s+"]";
-            if (list.indexOf(l)==list.size()-1)
+        String returnString="[";
+        list2 = dtpr.findYearlyTotal(v);
+        for (Object[] o : list2){
+            Long totalPeople = (Long) o[0];
+            Integer year = (Integer) o[1];
+            returnString= returnString+"["+year+", ";
+            returnString+=totalPeople+"]";
+            if (list2.indexOf(o)==list2.size()-1)
                 returnString+="]";
             else
                 returnString+=",";
