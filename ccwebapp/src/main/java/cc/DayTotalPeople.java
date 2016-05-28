@@ -23,7 +23,9 @@ import java.time.ZoneId;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "DayTotalPeople.updateTotal", query = "update DayTotalPeople d set d.totalPeople =?1 where d.date =?2 AND d.venue =?3"),
-        @NamedQuery(name = "DayTotalPeople.findSumPeopleByVenueAndDateBetween", query = "select sum(d.totalPeople) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3")
+        @NamedQuery(name = "DayTotalPeople.findSumPeopleByVenueAndDateBetween", query = "select sum(d.totalPeople) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3"),
+        @NamedQuery(name = "DayTotalPeople.findMonthlyTotal", query = "SELECT SUM(d.totalPeople), MONTH(date) from DayTotalPeople d where d.venue=?1 and d.date between ?2 and ?3 group by MONTH(date) order by MONTH(date)"),
+        @NamedQuery(name = "DayTotalPeople.findYearlyTotal", query = "SELECT SUM(d.totalPeople), YEAR(date) from DayTotalPeople d where d.venue=?1 group by YEAR(date) order by YEAR(date)")
 })
 public class DayTotalPeople {
 

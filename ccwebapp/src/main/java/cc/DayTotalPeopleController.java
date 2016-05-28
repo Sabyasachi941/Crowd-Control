@@ -1,12 +1,15 @@
 package cc;
 
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -23,8 +26,6 @@ public class DayTotalPeopleController {
 
     @RequestMapping(value ="/graphData", method = RequestMethod.GET, headers = "Accept=application/json")
     public String getGraphData(Principal principal) {
-        //This should all be in a service class but i haven't got it working in one yet!
-        //Actually no i think it's right here!
         List<DayTotalPeople> list;
         String returnString="[";
         String email = principal.getName();
@@ -34,25 +35,18 @@ public class DayTotalPeopleController {
         for (DayTotalPeople d: list) {
             System.out.println(d.toString());
             String s = d.toString();
-            //s = s.replace("\"", "");
             returnString+=s;
             if (list.indexOf(d)==list.size()-1)
                 returnString+="]";
             else
                 returnString+=",";
-            //dayTotalPeopleListStrings.add(s);
         }
-
-        /*if (dayTotalPeopleListStrings.isEmpty())
-            return "empty";
-        else return "not empty";*/
-        //return dayTotalPeopleListStrings;
         return returnString;
 
     }
 
     @RequestMapping(value ="/MonthlyIncreaseOrDecrease", method = RequestMethod.GET, headers = "Accept=application/json")
-    public double getMonthlyIncreaseOrDecrease(Principal principal) {
+    public String getMonthlyIncreaseOrDecrease(Principal principal) {
         //method to get the increase or decrease in footfall numbers for the month so far compared with this time last month
         String email = principal.getName();
         Venue v = vr.findByEmail(email);
@@ -67,10 +61,12 @@ public class DayTotalPeopleController {
         //uf percentage is negative num then there's a percentage decrease
         newNum = totalThisMonth - totalLastMonth;
         double increaseOrDecrease = newNum/totalLastMonth;
-        double percentage =  (increaseOrDecrease/totalLastMonth)*100;
+        double percentage =  increaseOrDecrease*100;
 
+        DecimalFormat df = new DecimalFormat("#.####");
+        String percentageString = df.format(percentage);
 
-        return percentage;
+        return percentageString;
     }
 
     @RequestMapping(value = "/soFarThisMonth", method = RequestMethod.GET, headers =  "Accept=application/json")
@@ -83,4 +79,52 @@ public class DayTotalPeopleController {
         return monthSoFar;
     }
 
+    @RequestMapping(value = "/monthTotalSinceYearStart", method = RequestMethod.GET, headers =  "Accept=application/json" )
+    public String getLastSevenDays(Principal principal) {
+        List<Object[]> list;
+        String email = principal.getName();
+        String returnString="[";
+        Venue v = vr.findByEmail(email);
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        org.joda.time.LocalDate today = org.joda.time.LocalDate.now();
+        org.joda.time.LocalDate startYear = new LocalDate(year,1,1);
+        list=dtpr.findMonthlyTotal(v,startYear,today);
+        //List<MyObject> result = new ArrayList<>(list.size());
+        for (Object[] l: list) {
+            Long sumPeople = (Long) l[0];
+            Integer date = (Integer) l[1];
+            String s = sumPeople.toString();
+            String s2 = date.toString();
+            returnString= returnString+"["+s2+", ";
+            returnString+=s+"]";
+            if (list.indexOf(l)==list.size()-1)
+                returnString+="]";
+            else
+                returnString+=",";
+        }
+        return returnString;
+    }
+
+    @RequestMapping(value = "/yearlyTotals", method = RequestMethod.GET, headers =  "Accept=application/json" )
+    public String getYearlyTotals(Principal principal) {
+        List<Object[]> list;
+        String email = principal.getName();
+        String returnString="[";
+        Venue v = vr.findByEmail(email);
+        list = dtpr.findYearlyTotal(v);
+        for (Object[] l: list) {
+            Long sumPeople = (Long) l[0];
+            Integer date = (Integer) l[1];
+            String s = sumPeople.toString();
+            String s2 = date.toString();
+            returnString= returnString+"["+s2+", ";
+            returnString+=s+"]";
+            if (list.indexOf(l)==list.size()-1)
+                returnString+="]";
+            else
+                returnString+=",";
+        }
+        return returnString;
+
+    }
 }

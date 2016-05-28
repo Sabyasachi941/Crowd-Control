@@ -2,10 +2,11 @@
 package cc;
 
 import org.joda.time.LocalDate;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
@@ -22,4 +23,8 @@ public interface DayTotalPeopleRepository extends PagingAndSortingRepository <Da
     List <DayTotalPeople> findByVenue(Venue v);
 
     Integer findSumPeopleByVenueAndDateBetween(Venue v, LocalDate d1, LocalDate d2);
+
+    List <Object[]> findMonthlyTotal(Venue v, LocalDate d1, LocalDate d2 );
+
+    List <Object[]> findYearlyTotal(Venue v);
 }
