@@ -1,6 +1,8 @@
 package cc;
 
 import org.joda.time.DateTime;
+import org.springframework.context.annotation.Configuration;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +21,7 @@ import javax.persistence.*;
         @NamedQuery(name ="Timestamp.findByLatestTimestamp", query ="select t.currentAttendance from Timestamp t where t.venue = ?1 and t.timestamp = (select max(t.timestamp) from Timestamp t where t.venue = ?1)")
 })
 
-
+@Configuration
 public class Timestamp {
 
     @Id

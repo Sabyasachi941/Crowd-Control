@@ -57,4 +57,15 @@ public class ViewControllerTest{
                 .andExpect(status().isOk())
                 .andExpect(view().name("portalview"));
     }
+
+    @Test
+    public void testChartPage() throws Exception{
+        this.mockMvc.perform(get("/charts"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("chartView"));
+
+    }
 }
+
+
+

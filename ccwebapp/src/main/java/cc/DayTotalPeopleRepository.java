@@ -27,4 +27,6 @@ public interface DayTotalPeopleRepository extends PagingAndSortingRepository <Da
     List <Object[]> findMonthlyTotal(Venue v, LocalDate d1, LocalDate d2 );
 
     List <Object[]> findYearlyTotal(Venue v);
+
+    DayTotalPeople findByVenue(Venue v);
 }

@@ -1,0 +1,13 @@
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <TIMESTAMP id="1" timestamp="01/01/2013 08:45:00" venue="1" peopleIn="1" peopleOut="0" currentAttendance="34" />
+    <TIMESTAMP id="2" timestamp="01/01/2013 10:45:00" venue="1" peopleIn="1" peopleOut="0" currentAttendance="78" />
+    <TIMESTAMP id="3" timestamp="01/01/2013 11:00:03" venue="1" peopleIn="0" peopleOut="1" currentAttendance="46" />
+    <TIMESTAMP id="4" timestamp="11/15/2013 08:45:00" venue="2" peopleIn="1" peopleOut="0" currentAttendance="34" />
+    <TIMESTAMP id="5" timestamp="03/06/2013 00:23:23" venue="1" peopleIn="1" peopleOut="2" currentAttendance="16" />
+    <TIMESTAMP id="6" timestamp="06/01/2015 16:17:01" venue="3" peopleIn="0" peopleOut="1" currentAttendance="100" />
+    <TIMESTAMP id="7" timestamp="01/01/2016 17:48:00" venue="2" peopleIn="1" peopleOut="1" currentAttendance="11" />
+    <TIMESTAMP id="8" timestamp="06/01/2016 14:37:10" venue="4" peopleIn="1" peopleOut="0" currentAttendance="340" />
+    <TIMESTAMP id="9" timestamp="06/01/2016 18:30:00" venue="4" peopleIn="0" peopleOut="1" currentAttendance="800" />
+</bean>
+
+

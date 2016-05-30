@@ -37,6 +37,8 @@ public class Venue implements Serializable {
         this.timestamps = venue.timestamps;
     }
 
+    public void setInteger(Integer id) {this.id = id;}
+
     public Integer getId() { return id;}
 
     public Integer getCapacity() {

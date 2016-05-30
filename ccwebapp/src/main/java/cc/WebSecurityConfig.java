@@ -22,16 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    /*@Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordencoder());
-    }*/
-
-    /*@Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
-    }*/
-
     @Autowired
     public void configureGlobal(UserDetailsService userDetailsService, AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
@@ -45,9 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.and().httpBasic() is needed to curl to db but it creates annoying erro
                 //static refers to the static content - without this user would not be able to see images/styles/js effect w/out signing in!
                     .antMatchers("/", "/venue/new", "/static/**").permitAll()
-                    .anyRequest().authenticated()
-                    .and()
-                .formLogin()
+                    .anyRequest().authenticated();
+                http.formLogin()
                     .loginPage("/login")
                     .permitAll()
                     .and()
@@ -55,12 +44,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll();
         http.csrf().disable();
     }
-
-
-
-    /*@Bean(name="passwordEncoder")
-    public PasswordEncoder passwordencoder(){
-        return new BCryptPasswordEncoder();
-    }*/
 
 }

@@ -184,7 +184,7 @@
                     document.getElementById("demo").innerHTML = xhttp.responseText;
                 }
             };
-            xhttp.open("GET", "http://localhost:8181/CurrentAttendance", true);
+            xhttp.open("GET", "http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/CurrentAttendance", true);
             xhttp.send();
         }
 
@@ -212,7 +212,7 @@
                     }
                 }
             }
-            xmlhttp.open("GET", "http://localhost:8181/soFarThisMonth", true);
+            xmlhttp.open("GET", "http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/soFarThisMonth", true);
             xmlhttp.send();
         }
 
@@ -240,7 +240,7 @@
                     }
                 }
             }
-            xmlhttp.open("GET", "http://localhost:8181/MonthlyIncreaseOrDecrease", false);
+            xmlhttp.open("GET", "http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/MonthlyIncreaseOrDecrease", false);
             xmlhttp.send();
             callback();
         }

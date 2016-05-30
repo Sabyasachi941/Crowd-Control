@@ -1,0 +1,15 @@
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <DAYTOTALPEOPLE id="1" date="01/01/2013" totalPeople="0" venue="1" />
+    <DAYTOTALPEOPLE id="2" date="01/01/2014" totalPeople="12" venue="1" />
+    <DAYTOTALPEOPLE id="3" date="01/01/2013" totalPeople="25" venue="2" />
+    <DAYTOTALPEOPLE id="4" date="06/15/2015" totalPeople="8" venue="1" />
+    <DAYTOTALPEOPLE id="5" date="01/01/2016" totalPeople="30" venue="3" />
+    <DAYTOTALPEOPLE id="6" date="01/15/2016" totalPeople="20" venue="3" />
+    <DAYTOTALPEOPLE id="7" date="03/11/2016" totalPeople="40" venue="3" />
+    <DAYTOTALPEOPLE id="8" date="05/23/2016" totalPeople="10" venue="3" />
+    <DAYTOTALPEOPLE id="9" date="05/23/2014" totalPeople="100" venue="4" />
+    <DAYTOTALPEOPLE id="10" date="11/20/2014" totalPeople="150" venue="4" />
+    <DAYTOTALPEOPLE id="11" date="05/23/2015" totalPeople="200" venue="4"/>
+    <DAYTOTALPEOPLE id="12" date="05/23/2016" totalPeople="250" venue="4" />
+</bean>
+

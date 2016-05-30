@@ -1,5 +1,5 @@
 $(function () {
-    $.getJSON('http://localhost:8181/graphData', function (data) {
+    $.getJSON('http://ccwebapp-env.eu-west-1.elasticbeanstalk.com/graphData', function (data) {
 
         $('#container').highcharts({
             chart: {
