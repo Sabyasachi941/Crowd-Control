@@ -31,17 +31,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .httpBasic()
+                        .and()
                 .authorizeRequests()
                 //.and().httpBasic() is needed to curl to db but it creates annoying erro
                 //static refers to the static content - without this user would not be able to see images/styles/js effect w/out signing in!
-                    .antMatchers("/", "/venue/new", "/static/**").permitAll()
-                    .anyRequest().authenticated();
-                http.formLogin()
-                    .loginPage("/login")
-                    .permitAll()
-                    .and()
+                .antMatchers("/", "/venue/new", "/static/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
                 .logout()
-                    .permitAll();
+                .permitAll();
         http.csrf().disable();
     }
 
