@@ -50,8 +50,6 @@ public class Timestamp {
         this.currentAttendance = currentAttendance;
     }
 
-
-    //change the data type for timestamp to match up with postgres type/joda time idk
     public DateTime getTimestamp() {
         return timestamp;
     }
@@ -74,6 +72,6 @@ public class Timestamp {
 
     public Integer getCurrentAttendance() {return currentAttendance;}
 
-    public void setCurrentAttendance(Integer peopleIn) {this.peopleIn = currentAttendance;}
+    public void setCurrentAttendance(Integer currentAttendance) {this.peopleIn = currentAttendance;}
 
 }
